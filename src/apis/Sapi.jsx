@@ -35,34 +35,29 @@ import React, { useEffect, useState } from 'react'
 import Sproduct from './Sproduct'
 
 const Sapi = () => {
+  let url = 'https://dummyjson.com/products'
+  const [products, setProducts] = useState([])
 
-   let url ='https://dummyjson.com/products'
-   const [products,setProducts] = useState([])
-
-
-   const getproducts = async ()=>{
-      let result = await fetch(url)
-      let pdata = await result.json()
-      
-      setProducts = (pdata.products)
-   }
-
-   useEffect(()=>{
-      getproducts()
-   },[])
-  return (
-    <>
-    <div className="container ">
-
-     <h1 className='text-2xl font-semibold mx-auto'>Products</h1>
-
-     <div className="container mx-auto grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"></div>
-             {products?.map((item,index)=>{
-               return <Sproduct/>
-             })}
-    </div>
+  const getproducts = async () => {
+    let result = await fetch(url)
+    let pdata = await result.json()
     
-    </>
+    setProducts(pdata.products) 
+  }
+
+  useEffect(() => {
+    getproducts()
+  }, [])
+
+  return (
+    <div className="container">
+      <h1 className='text-3xl font-semibold mx-auto text-center my-3'>Products</h1>
+      <div className="container mx-auto gap-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        {products?.map((item, index) => (
+          <Sproduct key={index} {...item} /> 
+        ))}
+      </div>
+    </div>
   )
 }
 
