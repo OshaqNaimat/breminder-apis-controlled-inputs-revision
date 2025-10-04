@@ -2,6 +2,7 @@ import React from 'react'
 import Bday from "./birthdayreminder/Bday"
 import Api from './apis/Api'
 import Sapi from './apis/Sapi'
+import Useref from './Useref/Useref'
 
 
 const App = () => {
@@ -9,8 +10,8 @@ const App = () => {
     <>
     {/* <Bday/> */}
     {/* <Api/> */}
-    <Sapi/>
-
+    {/* <Sapi/> */}
+     <Useref/>
     
     </>
   )
