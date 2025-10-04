@@ -46,7 +46,7 @@ const Useref = () => {
 
       <button
         onClick={handleClick}
-        className="w-full bg-blue-500 p-1 rounded-md cursor-pointer active:scale-95 duration-75 hover:bg-blue-600 text-white my-2"
+        className="w-full bg-blue-500 p-1 outline-0 rounded-md cursor-pointer active:scale-95 duration-75 hover:bg-blue-600 text-white my-2"
       >
         Change Heading
       </button>
