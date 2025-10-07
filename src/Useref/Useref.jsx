@@ -13,6 +13,8 @@ const Useref = () => {
 
   const handleClick = () => {
     // ✅ update the click count FIRST
+
+
     setClicks(prev => prev + 1)
 
     const head = heading.current
