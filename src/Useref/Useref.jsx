@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 
 const Useref = () => {
   const heading = useRef(null)
-  const [clicks, setClicks] = useState(0) // ✅ state for counting clicks
+  const [clicks, setClicks] = useState(0)
 
   const colors = ['A','B','C','D','E','F',1,2,3,4,5,6,7,8,9]
 
@@ -11,22 +11,25 @@ const Useref = () => {
     return Math.floor(random)
   }
 
-  const handleClick = () => {
-    // ✅ update the click count FIRST
 
+
+  let count = 0;
+  const handleClick = () => {
+    count++
+            
 
     setClicks(prev => prev + 1)
 
     const head = heading.current
     if (!head) return
 
-    // random color generation
+    
     let hex = ''
     for (let i = 0; i < 6; i++) {
       hex += colors[genrateRandom()]
     }
-
-    // rotation + color change
+ 
+    
     head.style.transform = `rotate(${Math.random() * 360}deg)`
     head.style.transition = 'transform 0.5s ease'
     head.style.background = `#${hex}`
@@ -34,7 +37,7 @@ const Useref = () => {
 
   return (
     <div className="container mx-auto text-center select-none my-10 relative w-[90%] md:w-1/2 lg:w-1/3">
-      {/* ✅ show the count */}
+    
       <h2 className="text-2xl font-semibold p-3 absolute left-5">
         {clicks} Clicks
       </h2>

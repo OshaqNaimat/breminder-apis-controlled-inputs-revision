@@ -3,6 +3,7 @@ import Bday from "./birthdayreminder/Bday"
 import Api from './apis/Api'
 import Sapi from './apis/Sapi'
 import Useref from './Useref/Useref'
+import Usereducer from './Usereducer/Usereducer'
 
 
 const App = () => {
@@ -11,7 +12,8 @@ const App = () => {
     {/* <Bday/> */}
     {/* <Api/> */}
     {/* <Sapi/> */}
-     <Useref/>
+     {/* <Useref/> */}
+     <Usereducer/>
     
     </>
   )
