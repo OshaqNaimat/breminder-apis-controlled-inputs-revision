@@ -38,8 +38,23 @@ const Conuter = () => {
   const [name,setName] = useState('')
 
   const reducer =(state,action)=>{
-    
-  } 
+    if(action.type == 'Empty' ){
+      return {
+        ...state,
+        error : true,
+        message : 'Please enter a value'
+      }
+    }else if(action.type == 'Fill'){
+      return {
+        ...state,
+        error : false,
+        success : true,
+        message : 'Value Added',
+        data : [name]
+      }
+    }
+
+  }
 
   const initialState = {
     error : false,
@@ -51,7 +66,13 @@ const Conuter = () => {
   const [state,dispatch] = useReducer(reducer,initialState)
   const handleClick = (e) =>{
     e.preventDefault()
-     
+     if(!name){
+      dispatch({type : 'Empty'})
+     }
+  }
+
+  if(name){
+    dispatch({type : 'Fill'})
   }
   return (
     <>
@@ -61,7 +82,8 @@ const Conuter = () => {
       <form action="" >
         <label htmlFor="" className='font-semibold'>Name</label>
         <input value={name} onChange={(e)=>setName(e.target.value)} type="text" className='w-full border p-1 rounded-md outline-none' />
-        <button onClick={(e)=>dispatch()} className='bg-blue-500 hover:bg-blue-600 active:scale-90 duration-100
+        {state.error && <p className='text-red-500 font-semibold'>Please enter a new value</p>}
+        <button onClick={handleClick} className='bg-blue-500 hover:bg-blue-600 active:scale-90 duration-100
         w-full my-3 p-1 text-white rounded-md'>ADD</button>
       </form>
     </div>
