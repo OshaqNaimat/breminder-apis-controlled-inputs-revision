@@ -51,7 +51,7 @@ const Conuter = () => {
   const [state,dispatch] = useReducer(reducer,initialState)
   const handleClick = (e) =>{
     e.preventDefault()
-
+     
   }
   return (
     <>
@@ -61,7 +61,7 @@ const Conuter = () => {
       <form action="" >
         <label htmlFor="" className='font-semibold'>Name</label>
         <input value={name} onChange={(e)=>setName(e.target.value)} type="text" className='w-full border p-1 rounded-md outline-none' />
-        <button onClick={handleClick} className='bg-blue-500 hover:bg-blue-600 active:scale-90 duration-100
+        <button onClick={(e)=>dispatch()} className='bg-blue-500 hover:bg-blue-600 active:scale-90 duration-100
         w-full my-3 p-1 text-white rounded-md'>ADD</button>
       </form>
     </div>
