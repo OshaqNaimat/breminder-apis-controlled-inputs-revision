@@ -92,7 +92,7 @@ const Conuter = () => {
           <Singleitem
             key={index}
             name={item}
-            onDelete={() => handleDelete(index)} // 👈 passed delete function
+            onDelete={() => handleDelete(index)} //
           />
         ))}
       </div>

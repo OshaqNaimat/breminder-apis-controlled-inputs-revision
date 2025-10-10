@@ -21,7 +21,7 @@ const Singleitem = ({ name, onDelete }) => {
         <FaTrash
           size={30}
           className='cursor-pointer bg-red-500 text-white p-1 rounded-md hover:bg-red-600 active:scale-90 duration-150'
-          onClick={onDelete} // 👈 delete trigger
+          onClick={onDelete} 
         />
       </div>
     </>
