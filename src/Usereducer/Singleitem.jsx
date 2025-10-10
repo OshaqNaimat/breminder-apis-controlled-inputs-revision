@@ -13,7 +13,7 @@ const Singleitem = ({name}) => {
   return (
     <>
     <div className="container items-center text-center  shadow-lg rounded-md shadow-black p-3 flex justify-between">
-        {open && <Namepop setOpen = {setOpen}/> }
+        {open && <Namepop setOpen = {setOpen} name = {name}/> }
         <h1 onClick={handleOpen} className='text-2xl font-semibold'>
         { name.length > 10 ? `${name.slice(0,10)}`  : name}...
         </h1>

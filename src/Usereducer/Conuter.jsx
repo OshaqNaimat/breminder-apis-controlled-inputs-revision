@@ -66,7 +66,6 @@ const Conuter = () => {
   } 
 
   const initialState = {
-    
     error : false,
     success : false,
     message : '',
