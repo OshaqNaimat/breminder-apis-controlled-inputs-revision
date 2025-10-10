@@ -32,6 +32,7 @@
 // export default Conuter
 
 import React, { useReducer, useState } from 'react'
+import Singleitem from './Singleitem'
 
 const Conuter = () => {
 
@@ -42,21 +43,30 @@ const Conuter = () => {
       return {
         ...state,
         error : true,
+        success : false,
         message : 'Please enter a value'
+      }
+    }else if(action.type == 'Reset'){
+      return {
+        ...state,
+        error : false,
+        message : '',
+        success : false
+        
       }
     }else if(action.type == 'Fill'){
       return {
         ...state,
-        error : false,
         success : true,
-        message : 'Value Added',
-        data : [name]
+        message : 'Value added successfully',
+        data : [...state.data,action.payload]
       }
     }
 
-  }
+  } 
 
   const initialState = {
+    
     error : false,
     success : false,
     message : '',
@@ -68,12 +78,17 @@ const Conuter = () => {
     e.preventDefault()
      if(!name){
       dispatch({type : 'Empty'})
+     }else {
+      dispatch({type : 'Fill', payload : name})
      }
+
+     setName('')
+     setTimeout(() => {
+      dispatch({type : 'Reset'})
+     }, 3000);
   }
 
-  if(name){
-    dispatch({type : 'Fill'})
-  }
+  
   return (
     <>
     
@@ -82,10 +97,21 @@ const Conuter = () => {
       <form action="" >
         <label htmlFor="" className='font-semibold'>Name</label>
         <input value={name} onChange={(e)=>setName(e.target.value)} type="text" className='w-full border p-1 rounded-md outline-none' />
-        {state.error && <p className='text-red-500 font-semibold'>Please enter a new value</p>}
+        {state.error && <p className='text-red-500 font-semibold'>
+          {state.message}
+        </p>}
+        {state.success && <p className='text-green-500 font-semibold'>
+          {state.message} 
+          </p>}
         <button onClick={handleClick} className='bg-blue-500 hover:bg-blue-600 active:scale-90 duration-100
         w-full my-3 p-1 text-white rounded-md'>ADD</button>
       </form>
+    </div>
+      <div className="conatiner mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-5 gap-5 select-none text-center">
+
+    {state.data.map((item,index)=>{
+      return <Singleitem name ={item}/>
+    })}
     </div>
     </>
   )
