@@ -31,7 +31,8 @@
 // export default Singleitem
 
 
-import React from 'react'
+import React, { useState } from 'react'
+import { FaTrash } from 'react-icons/fa'
 
 const Singleitem = ({name}) => {
   const [open,setOpen] = useState(false)
@@ -42,11 +43,13 @@ const Singleitem = ({name}) => {
   }
   return (
     <>
-    <div className="container items-center text-center shadow shadow-black">
+    <div className="container items-center flex justify-between p-2 shadow shadow-black rounded-md">
       {/* {open && <Namepop/>} */}
       <h1 onClick={handleOpen}  className='font-semibold text-2xl cursor-cell'>
         {name.length > 10 ? `${name.slice(0,10)}...` : name}
         </h1>
+
+        <FaTrash size={20}/>
     </div>
     
     </>
@@ -54,3 +57,5 @@ const Singleitem = ({name}) => {
 }
 
 export default Singleitem
+
+
