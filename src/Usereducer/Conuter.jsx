@@ -102,14 +102,36 @@
 
 // export default Conuter
 
-import React, { useReducer } from 'react'
+import React, { useReducer, useState } from 'react'
 
 const Conuter = () => {
 
   const [name,setName] = useState('')
 
     const reducer = (state,action) =>{
-
+   if(action.type == 'Empty'){
+    return {
+      ...state,
+      error:true,
+      success:false,
+      message:'Please enter a value'
+    }
+   }else if (action.type == 'Fill'){
+    return {
+      ...state,
+      error:false,
+      success:true,
+      message:'Value added successfully',
+      data:[...state.data,action.payload]
+    }
+   }else if (action.type == 'Reset'){
+    return {
+      ...state,
+      error:false,
+      success:false,
+      message:''
+    }
+   }
     }
 
   const initialState = {
@@ -122,8 +144,19 @@ const Conuter = () => {
 
   const handleData = (e) =>{
        e.preventDefault()
+      if(!name){
+        dispatch({type:'Empty'})
+      }else if(name){
+        dispatch({type:'Fill',payload:name})
+      }
 
+      setTimeout(() => {
+        dispatch({type:'Reset'})
+      }, 3000);
+
+      setName('') 
   }
+
   return (
     <>
     <div className="container w-[90%] md:w-1/2 lg:w-1/3 shadow-lg shadow-black select-none p-3 mx-auto rounded-md">
@@ -133,8 +166,10 @@ const Conuter = () => {
          value={name}
          onChange={(e)=>setName(e.target.value)}
          type="text"
-         className='w-full my-2  p-1 shadow shadow-black rounded-md outline-0'/>
-        <button onClick={handleData} className='bg-blue-500 hover:bg-blue-600 active:scale-90 duration-200 w-full text-white rounded-md cursor-cell'>ADD</button>
+         className='w-full mt-2  p-1 shadow shadow-black rounded-md outline-0'/>
+
+         {state.error && <p className='text-red-500 font-semibold'>{state.message}</p>}
+        <button onClick={handleData} className='bg-blue-500 my-2 hover:bg-blue-600 active:scale-90 duration-200 w-full text-white rounded-md cursor-cell'>ADD</button>
         </form>
 
     
