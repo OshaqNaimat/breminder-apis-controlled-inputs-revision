@@ -34,10 +34,13 @@
 import React from 'react'
 
 const Singleitem = ({name}) => {
+  const [open,setOpen] = useState(false)
   return (
     <>
     <div className="container items-center text-center shadow shadow-black">
-      {name}
+      {open && <Namepop/>}
+      <h1 onClick={handleOpen} >
+        {name}</h1>
     </div>
     
     </>
