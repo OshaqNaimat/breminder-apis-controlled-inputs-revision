@@ -33,6 +33,7 @@
 
 import React, { useState } from 'react'
 import { FaTrash } from 'react-icons/fa'
+import Namepop from './Namepop'
 
 const Singleitem = ({name,onDelete}) => {
   const [open,setOpen] = useState(false)
@@ -44,7 +45,7 @@ const Singleitem = ({name,onDelete}) => {
   return (
     <>
     <div className="container items-center flex justify-between p-2 shadow shadow-black rounded-md">
-      {/* {open && <Namepop/>} */}
+      {open && <Namepop setOpen={setOpen} name={name}/>}
       <h1 onClick={handleOpen}  className='font-semibold text-2xl cursor-cell'>
         {name.length > 10 ? `${name.slice(0,10)}...` : name}
         </h1>
