@@ -158,6 +158,9 @@ const Conuter = () => {
       setName('') 
   }
 
+  const handleDelete = (index) =>{
+    dispatch({type:'Delete',payload:index})
+  }
   return (
     <>
     <div className="container w-[90%] md:w-1/2 lg:w-1/3 shadow-lg shadow-black select-none p-3 mx-auto rounded-md">
@@ -175,9 +178,9 @@ const Conuter = () => {
         </form>
     </div>
 
-    <div className="container grid grid-cols-1 p-2 md:grid-cols-2 lg:grid-cols-3 my-3 gap-3">
+    <div className="container grid grid-cols-1 p-2 select-none md:grid-cols-2 lg:grid-cols-3 my-3 gap-3">
             {state.data.map((item,index)=>{
-                 return  <Singleitem name={item} key={index}/>
+                 return  <Singleitem name={item} key={index} onDelete={()=>handleDelete(index)}/>
             })}
           </div> 
     </>

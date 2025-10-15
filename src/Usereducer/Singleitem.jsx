@@ -49,7 +49,8 @@ const Singleitem = ({name}) => {
         {name.length > 10 ? `${name.slice(0,10)}...` : name}
         </h1>
 
-        <FaTrash size={20}/>
+        <FaTrash size={30} className='bg-red-500 rounded-md text-white p-1 
+        hover:bg-red-600 active:scale-90 duration-150 cursor-no-drop'/>
     </div>
     
     </>
