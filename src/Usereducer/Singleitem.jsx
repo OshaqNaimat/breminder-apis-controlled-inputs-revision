@@ -35,12 +35,18 @@ import React from 'react'
 
 const Singleitem = ({name}) => {
   const [open,setOpen] = useState(false)
+
+
+  const handleOpen = ()=>{
+    setOpen(true)
+  }
   return (
     <>
     <div className="container items-center text-center shadow shadow-black">
-      {open && <Namepop/>}
-      <h1 onClick={handleOpen} >
-        {name}</h1>
+      {/* {open && <Namepop/>} */}
+      <h1 onClick={handleOpen}  className='font-semibold text-2xl cursor-cell'>
+        {name.length > 10 ? `${name.slice(0,10)}...` : name}
+        </h1>
     </div>
     
     </>

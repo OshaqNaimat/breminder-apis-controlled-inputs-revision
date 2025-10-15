@@ -173,9 +173,10 @@ const Conuter = () => {
          {state.success && <p className='text-green-500 font-semibold'>{state.message}</p>}
         <button onClick={handleData} className='bg-blue-500 my-2 hover:bg-blue-600 active:scale-90 duration-200 w-full text-white rounded-md cursor-cell'>ADD</button>
         </form>
-          <div className="continer grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {state.data.map((item,index)=>{
-              <Singleitem name={item}/>
+              
+                     <Singleitem name={item}/>
             })}
           </div>
     
