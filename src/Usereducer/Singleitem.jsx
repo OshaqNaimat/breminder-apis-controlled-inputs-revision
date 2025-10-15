@@ -34,7 +34,7 @@
 import React, { useState } from 'react'
 import { FaTrash } from 'react-icons/fa'
 
-const Singleitem = ({name}) => {
+const Singleitem = ({name,onDelete}) => {
   const [open,setOpen] = useState(false)
 
 
@@ -49,7 +49,7 @@ const Singleitem = ({name}) => {
         {name.length > 10 ? `${name.slice(0,10)}...` : name}
         </h1>
 
-        <FaTrash size={30} className='bg-red-500 rounded-md text-white p-1 
+        <FaTrash onClick={onDelete} size={30} className='bg-red-500 rounded-md text-white p-1 
         hover:bg-red-600 active:scale-90 duration-150 cursor-no-drop'/>
     </div>
     

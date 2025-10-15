@@ -132,9 +132,14 @@ const Conuter = () => {
       success:false,
       message:''
     }
+   }else if(action.type == 'Delete'){
+     return {
+
+            ...state,
+            data:state.data.filter((_,index)=>index !== action.payload)
    }
     }
-
+    }
   const initialState = {
    error:false,
    success:false,
