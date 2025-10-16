@@ -29,36 +29,34 @@
 
 // export default Sapi
 
-
-
 import React, { useEffect, useState } from 'react'
-import Sproduct from './Sproduct'
 
 const Sapi = () => {
   let url = 'https://dummyjson.com/products'
-  const [products, setProducts] = useState([])
-
-  const getproducts = async () => {
+  
+  const [products,setProducts] = useState([])
+  const getproducts = async()=>{
     let result = await fetch(url)
     let pdata = await result.json()
-    
-    setProducts(pdata.products) 
+    console.log(pdata)
+   setProducts(pdata.products)
   }
 
-  useEffect(() => {
+  useEffect(()=>{
     getproducts()
-  }, [])
-
+  },[])
   return (
-    <div className="container">
-      <h1 className='text-3xl font-semibold mx-auto text-center my-3'>Products</h1>
-      <div className="container mx-auto gap-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-        {products?.map((item, index) => (
-          <Sproduct key={index} {...item} /> 
-        ))}
-      </div>
+    <>
+    <h1 className='text-3xl font-semibold text-center'>Products</h1>
+    <div className="contianer grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+      {products?.map((item,index)=>{
+        
+      })}
     </div>
+    </>
   )
 }
 
 export default Sapi
+
+

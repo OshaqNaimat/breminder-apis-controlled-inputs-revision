@@ -11,8 +11,8 @@ const App = () => {
   return (
     <>
     {/* <Bday/> */}
-    <Api/>
-    {/* <Sapi/> */}
+    {/* <Api/> */}
+    <Sapi/>
      {/* <Useref/> */}
      {/* <Usereducer/> */}
      {/* <Conuter/> */}
