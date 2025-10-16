@@ -37,8 +37,9 @@
 
 
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Singleitem from '../Usereducer/Singleitem'
+import SIngleitem from './SIngleitem'
 
 const Api = () => {
 
@@ -55,11 +56,11 @@ const Api = () => {
   },[])
   return (
     <>
-    <h1 className='text-center font-semibold text-3xl '>User Data</h1>
+    <h1 className='text-center font-semibold text-3xl my-3'>User Data</h1>
 
-    <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-center">
+    <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 text-center">
       {user?.map((item,index)=>{
-        return <Singleitem/>
+        return <SIngleitem {...item} key={index}/>
       })}
     </div>
     </>
