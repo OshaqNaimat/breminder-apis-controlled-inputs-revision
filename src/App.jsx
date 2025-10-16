@@ -11,11 +11,11 @@ const App = () => {
   return (
     <>
     {/* <Bday/> */}
-    {/* <Api/> */}
+    <Api/>
     {/* <Sapi/> */}
      {/* <Useref/> */}
      {/* <Usereducer/> */}
-     <Conuter/>
+     {/* <Conuter/> */}
     
     </>
   )
