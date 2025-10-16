@@ -30,6 +30,7 @@
 // export default Sapi
 
 import React, { useEffect, useState } from 'react'
+import Sproduct from './Sproduct'
 
 const Sapi = () => {
   let url = 'https://dummyjson.com/products'
@@ -50,7 +51,7 @@ const Sapi = () => {
     <h1 className='text-3xl font-semibold text-center'>Products</h1>
     <div className="contianer grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
       {products?.map((item,index)=>{
-        return <Sproduct/>
+        return <Sproduct {...item} key={index}/>
       })}
     </div>
     </>
