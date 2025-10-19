@@ -5,6 +5,7 @@ import Sapi from './apis/Sapi'
 import Useref from './Useref/Useref'
 import Usereducer from './Usereducer/Usereducer'
 import Conuter from './Usereducer/Conuter'
+import Drilling from './drilling/Drilling'
 
 
 const App = () => {
@@ -12,11 +13,11 @@ const App = () => {
     <>
     {/* <Bday/> */}
     {/* <Api/> */}
-    <Sapi/>
+    {/* <Sapi/> */}
      {/* <Useref/> */}
      {/* <Usereducer/> */}
      {/* <Conuter/> */}
-    
+    <Drilling/>
     </>
   )
 }

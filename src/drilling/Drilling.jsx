@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { info } from '../birthdayreminder/Data'
+import List from './List'
 
 const Drilling = () => {
-  return (
-    <div>Drilling</div>
+   const [mydata,setMyData] = useState( info )
+    return (
+    <>
+    <div className="container mx-auto">
+        {mydata.map((item,index)=>{
+            return <List key={index}/>
+        })}
+    </div>
+    </>
   )
 }
 
