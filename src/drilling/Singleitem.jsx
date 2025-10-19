@@ -14,7 +14,7 @@ const Singleitem = ({id,name,age,image,remove}) => {
         <h4>{name}</h4>
         <h5>{age}</h5>
         </div>
-        <button onClick={()=>data(id)} className='bg-red-500 rounded-md w-full my-2'>Delete</button>
+        <button onClick={()=>filterData(id)} className='bg-red-500 rounded-md w-full my-2'>Delete</button>
     </div>
     
     </>
