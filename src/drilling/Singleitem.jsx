@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 const Singleitem = ({id,name,age,image,remove}) => {
-  return (
+  
+    const data = useContext(PersonContext)
+    console.log(data);
+  
+    return (
     <>
     <div className=" w-[90%] md:w-1/2 lg:w-1/3 mx-auto items-center bg-white p-4 mb-4 rounded shadow">
         <img src={image} alt="" />
