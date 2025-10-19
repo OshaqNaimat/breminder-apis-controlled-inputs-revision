@@ -24,7 +24,7 @@ const Sproduct = ({images,brand,title,price}) => {
   return (
     <>
     <div className="container shadow-lg shadow-black rounded-md">
-      <img src={images[0]} alt="" />
+      <img src={images[0  ]} alt="" />
       <h2 className='text-center font-semibold'>
         {title}
       </h2>
