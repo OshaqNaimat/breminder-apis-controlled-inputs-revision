@@ -1,9 +1,10 @@
 import React from 'react'
+import Singleitem from './Singleitem'
 
-const List = () => {
+const List = ({item,remove}) => {
   return (
     <>
-    <Singleitem/>
+    <Singleitem  {...item} remove={remove}/>
     
     </>
   )
