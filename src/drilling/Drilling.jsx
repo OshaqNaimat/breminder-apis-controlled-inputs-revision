@@ -3,7 +3,7 @@ import { info } from '../birthdayreminder/Data'
 import List from './List'
 
 
-const PersonContext = createContext()
+export const PersonContext = createContext()
 const Drilling = () => {
    const [mydata,setMyData] = useState( info )
 
@@ -16,7 +16,10 @@ const Drilling = () => {
     setMyData(newData)
    }
     return (
-    <PersonContext.Provider value="salam">
+    <PersonContext.Provider value={{
+        mydata,
+        filterData
+    }}>
     <div className="container mx-auto">
         {mydata.map((item,index)=>{
             return <List remove={filterData} item={item} key={index}/>
