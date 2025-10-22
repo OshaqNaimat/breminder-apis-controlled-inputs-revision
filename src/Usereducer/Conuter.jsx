@@ -102,10 +102,14 @@
 
 // export default Conuter
 
-import React, { useReducer, useState } from 'react'
+import React, { useContext, useReducer, useState } from 'react'
 import Singleitem from './Singleitem'
+import { AppContext } from '../Context/Context';
 
 const Conuter = () => {
+
+  const data = useContext(AppContext)
+  console.log(data);
 
   const [name,setName] = useState('')
 

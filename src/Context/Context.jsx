@@ -4,7 +4,7 @@ export const AppContext = createContext()
 
 
 export const AppProvider = ({children})=>{
- return <AppContext.Provider>
+ return <AppContext.Provider value={'Salam'}>
 {children}
  </AppContext.Provider>
 }

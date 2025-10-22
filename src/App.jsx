@@ -16,8 +16,8 @@ const App = () => {
     {/* <Sapi/> */}
      {/* <Useref/> */}
      {/* <Usereducer/> */}
-     {/* <Conuter/> */}
-    <Drilling/>
+     <Conuter/>
+    {/* <Drilling/> */}
     </>
   )
 }
