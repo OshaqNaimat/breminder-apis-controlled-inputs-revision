@@ -104,7 +104,7 @@
 
 import React, { useContext, useReducer, useState } from 'react'
 import Singleitem from './Singleitem'
-import { AppContext } from '../Context/Context';
+// import { AppContext } from '../Context/Context';
 
 const Conuter = () => {
 
