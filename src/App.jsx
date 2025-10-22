@@ -6,7 +6,8 @@ import Useref from './Useref/Useref'
 import Usereducer from './Usereducer/Usereducer'
 import Conuter from './Usereducer/Conuter'
 import Drilling from './drilling/Drilling'
-
+import Home from './pages/Home'
+import { BrowserRouter } from 'react-router-dom'
 
 const App = () => {
   return (
@@ -16,8 +17,9 @@ const App = () => {
     {/* <Sapi/> */}
      {/* <Useref/> */}
      {/* <Usereducer/> */}
-     <Conuter/>
+     {/* <Conuter/> */}
     {/* <Drilling/> */}
+    <Home/>
     </>
   )
 }
